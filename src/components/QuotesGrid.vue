@@ -3,7 +3,7 @@
         <app-quote 
             v-for="(quote,i) in quotes" 
             :key="i"
-            @quoteDeleted="deleteQuote(i)">
+            @click.native="deleteQuote(i)">
             {{quote}}
         </app-quote>
     </div>

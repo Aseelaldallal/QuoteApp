@@ -1,11 +1,22 @@
 <template>
-    <div>
-        <h1>Quotes Added</h1>
-        <div class="progressBar">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <h1>Quotes Added</h1>
             <div class="progress">
-                {{numQuotes}}
+                <div class="progress">
+                    <div class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        :style="{width: (numQuotes / maxQuotes * 100) + '%'}">
+                       {{ numQuotes }} / {{ maxQuotes}}
+                    </div>
+                </div>
             </div>
         </div>
+        
     </div>
 </template>
 
@@ -13,6 +24,10 @@
 export default {
     props: {
         numQuotes: {
+            type: Number,
+            required: true
+        },
+        maxQuotes: {
             type: Number,
             required: true
         }
